@@ -43,7 +43,21 @@ class covid19(models.Model):
             records=self.search(domain)
             Deceaseds=records.mapped('deseaced')
             data.total_deceased=sum(Deceaseds)+data.deseaced
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+            
+    def set_percentage_infected(self):
+        total=0
+        if self.infected:
+            total=(self.infected*100)/self.total_infected
+        return total
+        
+    def set_percentage_recovered(self):
+        total=0
+        if self.recovered:
+            total=(self.recovered*100)/self.total_recovered
+        return total 
+        
+    def set_percentage_deseaced(self):
+        total=0
+        if self.deseaced:
+            total=(self.deseaced*100)/self.total_deceased
+        return total

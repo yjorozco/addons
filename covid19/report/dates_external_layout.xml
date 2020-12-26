@@ -10,10 +10,10 @@
           name="covid19.datesReportExternalayout"
           file="covid19.datesReportExternalayout"
           menu="False" 
-          print_report_name="'Report %s %s of the covid-19' % (object.date,object.country_id.name)"
+          print_report_name="'Report %s %s of the covid19' % (object.date,object.country_id.name)"
          /> 
          
-        <template id="covid-19.datesReportExternalayout" >
+        <template id="covid19.datesReportExternalayout" >
             <t t-call="web.html_container">
                     <t t-call="web.external_layout">
                         <div class="page" style="font-size:18px">
